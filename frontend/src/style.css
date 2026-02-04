@@ -80,6 +80,18 @@ body {
   color: var(--titan-acid);
 }
 
+.app-title-button {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .settings-button {
   padding: 0.5rem;
   background: transparent;

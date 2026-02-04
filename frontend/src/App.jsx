@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Trophy, Plus, BarChart2, Settings } from 'lucide-react';
+import { Trophy, Plus, BarChart2, Settings, ArrowLeft } from 'lucide-react';
 
 export default function App() {
   // Track which tab is currently active ('home', 'leaderboard', 'stats')
@@ -23,15 +23,34 @@ export default function App() {
     );
   };
 
+  // Render different header based on active tab
+  const renderHeader = () => {
+    if (activeTab === 'home') {
+        return (
+          <h1 className="app-title">
+            PROJECT <span className="accent">TITAN</span>
+          </h1>
+        );
+      }
+      return (
+          <button 
+            className="app-title-button"
+            onClick={() => setActiveTab('home')}
+          >
+            <ArrowLeft />
+          </button>
+          
+        );
+    };
+
   return (
     <div className="app-container">
       {/* TOP BAR: Title & Settings */}
+      
       <header className="app-header">
-        <h1 className="app-title">
-          PROJECT <span className="accent">TITAN</span>
-        </h1>
+        {renderHeader()}
         <button className="settings-button">
-          <Settings />
+            <Settings />
         </button>
       </header>
 
